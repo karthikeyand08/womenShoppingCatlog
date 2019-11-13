@@ -1,12 +1,16 @@
 # encoding: utf-8
 
+import os
 from redis import Redis
 
 
 class RedisToJson:
 
     def __init__(self):
-        self.rdb = Redis(host='localhost', port='6379')
+        self.rdb = Redis(
+            host=os.environ.get('REDIS_HOST', 'localhost'),
+            port=os.environ.get('REDIS_HOST', '6379')
+        )
 
     def __enter__(self):
         return self

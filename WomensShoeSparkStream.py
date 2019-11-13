@@ -9,6 +9,14 @@ from pyspark.sql.window import Window
 class WSCsvStream:
 
     def __init__(self, input_file, redis_host, redis_port, jars):
+        """
+        This module is responsible for transforming data from csv to redis
+        :param input_file: CSV file(env INPUT_FILE)
+        :param redis_host: redis host(env REDIS_HOST)
+        :param redis_port: redis port(env REDIS_PORT)
+        :param jars: jars (env JARS) default required JAR is
+        spark-redis-2.4.1-SNAPSHOT-jar-with-dependencies.jar
+        """
 
         if not input_file:
             raise ValueError("'input_file' parameter cannot be None")
