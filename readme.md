@@ -9,3 +9,4 @@
         REST_SERVER_PORT,
         REDIS_HOST,
         REDIS_PORT,
+4. Requires python 3.7
